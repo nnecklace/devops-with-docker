@@ -1,7 +1,9 @@
 Before Optimization:
 
-Frontend: 
+Frontend:
+ 
     Size: 1.12GB
+
     Dockerfile:
     FROM node:latest
     COPY . ./
@@ -13,7 +15,9 @@ Frontend:
     EXPOSE 5000
 
 Backend: 
+
     Size: 997MB
+
     Dockerfile:
     FROM node:latest
     COPY . ./
@@ -26,7 +30,9 @@ Backend:
 After Optimization:
 
 Frontend:
+
     Size:603MB
+
     Dockerfile:
     FROM ubuntu:latest
     WORKDIR /app
@@ -42,7 +48,9 @@ Frontend:
     EXPOSE 5000
 
 Backend:
+
     Size:447MB
+
     Dockerfile:
     FROM ubuntu:latest
     COPY . ./
