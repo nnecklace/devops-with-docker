@@ -1,0 +1,9 @@
+FROM node:latest
+COPY . ./
+RUN npm install 
+RUN useradd -m app
+ENV FRONT_URL http://localhost:5000
+RUN chown -R app node_modules
+USER app
+CMD ["npm", "start"]
+EXPOSE 8000

@@ -1,0 +1,10 @@
+# When to use Docker 
+Docker is the perfect tool to use when you want your application to e.g. run on multiple servers with different operating systems. Another use case would be if your infrastructure is very conveniently already made into a docker image. An example of a common infrastructure setup would be e.g. LAMP or LEMP.                                                                                      
+An example for this could be a development team that has developers running multiple different operating systems and use different tools.                        
+
+## Without Docker
+Let's say we have a team of 7 developers and a java 8 application with Postgres 10 that runs on Ubuntu 16.04 in production. Without docker all the developers would have to sync their setups to match the production environment where the application they are developing is running. Let's say that two developers run windows 10, one windows 7, three MacOS, one Ubuntu, and one CentOS. All the developers would have to find the ools for their respective systems. Since the developers run on different systems there is no guarantee that the setup would match the production environment and common "it works on my machine" bugs would occur quite frequently. Updating the production environment would also result in everyone having to update their local setups, which could result in bugs or incompatible setups.                                                                                                                                                        
+
+## With Docker                                                                                                                            
+Containerizing the software into a docker container that would run the required tools for the system would solve most of the issues that occur without docker. The docker container could run on any platform that has docker installed. Now all the developers have the same exact setup running the same exact tools. Updating the any tool would only require all the developers to update their respective docker images.
+t

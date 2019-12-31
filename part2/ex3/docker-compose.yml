@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+    fe:
+        image: 'node-frontend'
+        ports:
+            - 5000:5000
+    be:
+        image: 'node-backend'
+        ports:
+            - 8000:8000
+        volumes:
+            - ./logs.txt:/logs.txt

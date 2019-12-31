@@ -1,0 +1,33 @@
+version: '3.5'
+services:
+    db:
+        image: postgres:10
+        environment:
+            - POSTGRES_PASSWORD=postgres
+    redis:
+        image: redis:latest
+    fe:
+        image: 'node-frontend'
+        environment:
+            - API_URL=http://localhost/api
+    be:
+        image: 'node-backend'
+        depends_on:
+            - db
+            - redis
+        environment:
+            - REDIS=redis
+            - DB_HOST=db
+            - DB_USERNAME=postgres
+            - DB_PASSWORD=postgres
+        volumes:
+            - ./logs.txt:/logs.txt
+    proxy:
+        image: nginx:latest
+        depends_on:
+            - be
+            - fe
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - 80:80
