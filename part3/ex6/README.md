@@ -1,4 +1,5 @@
 Before Optimization:
+
     Size:971MB
     Dockerfile:
     FROM ubuntu:latest
@@ -12,6 +13,7 @@ Before Optimization:
     EXPOSE 3000
 
 After Optimization:
+
     Size:398MB
     Dockerfile:
     FROM alpine
