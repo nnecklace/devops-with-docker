@@ -1,6 +1,7 @@
 Before Optimization:
 
 Frontend: 
+
     Size: 1.12GB
     Dockerfile:
     FROM node:latest
@@ -13,6 +14,7 @@ Frontend:
     EXPOSE 5000
 
 Backend: 
+
     Size: 997MB
     Dockerfile:
     FROM node:latest
@@ -26,6 +28,7 @@ Backend:
 After Optimization:
 
 Frontend:
+
     Size:296MB
     Dockerfile:
     FROM node:alpine
@@ -38,6 +41,7 @@ Frontend:
     EXPOSE 5000
 
 Backend:
+
     Size:176MB
     Dockerfile:
     FROM node:alpine
